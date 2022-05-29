@@ -52,7 +52,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
--   [Frank Perez](https://github.com/franktheprogrammer)
+-   [Frank Perez](https://github.com/frankperez87)
 -   [All Contributors](../../contributors)
 
 ## License
