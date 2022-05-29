@@ -3,7 +3,6 @@
 namespace FrankTheProgrammer\LaravelQueuedUp\Tests;
 
 use FrankTheProgrammer\LaravelQueuedUp\LaravelQueuedUpServiceProvider;
-use Illuminate\Events\Dispatcher;
 use Orchestra\Testbench\TestCase as Orchestra;
 use ReflectionFunction;
 
