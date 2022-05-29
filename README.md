@@ -25,6 +25,7 @@ This is the contents of the published config file:
 
 ```php
 return [
+    'enabled' => env('QUEUED_UP_ENABLED', false),
 ];
 ```
 
