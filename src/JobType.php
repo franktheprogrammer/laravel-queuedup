@@ -2,10 +2,10 @@
 
 namespace FrankTheProgrammer\LaravelQueuedUp;
 
-enum JobType
+enum JobType: string
 {
-    case Queued;
-    case Processing;
-    case Processed;
-    case Failed;
+    case Queued = 'Queued';
+    case Processing = 'Processing';
+    case Processed = 'Processed';
+    case Failed = 'Failed';
 }

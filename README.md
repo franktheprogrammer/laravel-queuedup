@@ -18,7 +18,7 @@ composer require franktheprogrammer/laravel-queuedup
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag="laravel-queuedup-config"
+php artisan vendor:publish --tag="queuedup-config"
 ```
 
 This is the contents of the published config file:

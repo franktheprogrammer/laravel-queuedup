@@ -8,6 +8,7 @@ use Illuminate\Queue\Events\JobFailed;
 use Illuminate\Queue\Events\JobProcessed;
 use Illuminate\Queue\Events\JobProcessing;
 use Illuminate\Queue\Events\JobQueued;
+use Illuminate\Support\Facades\Http;
 
 class JobRecorder
 {
@@ -63,8 +64,12 @@ class JobRecorder
         }
 
         if ($entry instanceof JobEntry) {
-            // Record
-            dump($entry->toArray());
+            $hostname = gethostname();
+
+            Http::post(
+                'http://' . $hostname . ':4000/record-job',
+                $entry->toArray()
+            );
         }
     }
 }

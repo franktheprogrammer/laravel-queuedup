@@ -6,7 +6,7 @@ use Spatie\DataTransferObject\DataTransferObject;
 
 class JobEntry extends DataTransferObject
 {
-    public int $id;
+    public int|string $id;
     public string $connection;
     public string $queue;
     public JobType $type;
