@@ -1,5 +1,5 @@
 <?php
-// config for FrankTheProgrammer/LaravelQueuedUp
-return [
 
+return [
+    'enabled' => env('QUEUED_UP_ENABLED', false),
 ];
