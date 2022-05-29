@@ -30,9 +30,10 @@ return [
 
 ## Usage
 
-```php
-$laravelQueuedUp = new FrankTheProgrammer\LaravelQueuedUp();
-echo $laravelQueuedUp->echoPhrase('Hello, FrankTheProgrammer!');
+Update your _.env_ to enable the package.
+
+```
+QUEUED_UP_ENABLED=true
 ```
 
 ## Testing
