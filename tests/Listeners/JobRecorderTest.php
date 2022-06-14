@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Http;
 it('can make http request when event processed', function () {
     Http::fake();
 
-    dispatch(new FakeJob);
+    dispatch(new FakeJob());
 
     $hostname = gethostname();
 
