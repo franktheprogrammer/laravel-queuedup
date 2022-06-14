@@ -9,6 +9,7 @@ class JobEntry extends DataTransferObject
     public int|string $id;
     public string $connection;
     public string $queue;
+    public string $project_path = '';
     public JobType $type;
     public int $attempts = 0;
 

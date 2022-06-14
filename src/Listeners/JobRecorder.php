@@ -66,6 +66,8 @@ class JobRecorder
         if ($entry instanceof JobEntry) {
             $hostname = gethostname();
 
+            $entry->project_path = base_path();
+
             Http::post(
                 'http://' . $hostname . ':4000/record-job',
                 $entry->toArray()
