@@ -7,6 +7,7 @@
 
 Debug and Monitor queues locally in Laravel.
 
+### *Currently under development.*
 ## Installation
 
 You can install the package via composer:
