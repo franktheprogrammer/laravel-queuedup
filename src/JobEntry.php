@@ -16,5 +16,5 @@ class JobEntry extends DataTransferObject
     public string $name;
     public ?string $size;
     public ?string $uuid;
-    public ?string $payload;
+    public ?array $payload;
 }

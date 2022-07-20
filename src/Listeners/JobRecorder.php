@@ -34,6 +34,7 @@ class JobRecorder
                 'queue' => $event->job->getQueue(),
                 'uuid' => $event->job->uuid(),
                 'name' => $event->job->payload()['displayName'],
+                'payload' => $this->getPayload($event->job),
                 'attempts' => $event->job->attempts(),
                 'type' => JobType::Processing,
             ]);
@@ -46,6 +47,7 @@ class JobRecorder
                 'queue' => $event->job->getQueue(),
                 'uuid' => $event->job->uuid(),
                 'name' => $event->job->payload()['displayName'],
+                'payload' => $this->getPayload($event->job),
                 'attempts' => $event->job->attempts(),
                 'type' => JobType::Processed,
             ]);
@@ -58,6 +60,7 @@ class JobRecorder
                 'queue' => $event->job->getQueue(),
                 'uuid' => $event->job->uuid(),
                 'name' => $event->job->payload()['displayName'],
+                'payload' => $this->getPayload($event->job),
                 'attempts' => $event->job->attempts(),
                 'type' => JobType::Failed,
             ]);
@@ -68,10 +71,21 @@ class JobRecorder
 
             $entry->project_path = base_path();
 
+            logger()->info($entry->toArray());
+
             Http::post(
                 'http://' . $hostname . ':4000/record-job',
                 $entry->toArray()
             );
         }
+    }
+
+    private function getPayload($job)
+    {
+        $payload = $job->payload();
+
+        $payload['data']['command'] = unserialize($payload['data']['command']);
+
+        return $payload;
     }
 }
